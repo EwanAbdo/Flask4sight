@@ -1,0 +1,86 @@
+<head>
+  <!-- Other head content -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/Web4SightStyles.css') }}">
+</head>
+
+<!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#counter">Counter</a></li>
+      <li><a href="#footer">Footer</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Welcome to 4Sight</h1>
+    <p>We help you find the best career path and build skills for your dream job</p>
+    <div id="particles-js"></div>
+    <script src="../static/js/particles.js"></script>
+    <script src="../static/js/app.js"></script>    
+  </div>
+  
+  <!-- Slider -->
+  <div class="slider">
+    <div class="slide">
+      <img src="../static/images/sky.png" alt="image1">
+      <p>You can explore space</p>
+    </div>
+    <div class="slide">
+      <img src="../static/images/EwanCyborg.png" height="20%" alt="image2" >
+      <p>create robots and metahumans</p>
+    </div>
+    <div class="slide">
+      <img src="../static/images/surgeon2.png" alt="image3">
+      <p>Or save lives</p>
+    </div>
+  </div>
+  
+  <!-- Services -->
+  <div id="services">
+    <h2>Our Services</h2>
+    <div class="service">
+      <h3>Job Search</h3>
+      <p>Upload your resume to let us search LinkedIn for you dream jobs. (only PDF)</p>
+      <!-- Form for uploading transcripts and resume -->
+      <form id="job-search-form" action="/run_script" method="POST" enctype="multipart/form-data">
+          
+        <center><input type="text" value="City, State, Country" name="city" action='/get_city' required></center>
+        
+        <center><input type="file" name="resume" accept=".pdf" required></center>
+        
+        <center><input type="submit" value="Search Jobs"></center>
+      
+      </form>
+    </div>
+    <div class="service">
+      <h3>Reesults</h3>
+      <p>Below are jobs found in the given location.</p>
+      <!-- Form for entering dream job and resume -->
+      <form id="skill-building-form" action="/show_data" method="POST" enctype="multipart/form-data">
+        
+        
+        
+        <!-- {{ data_var|safe }} -->
+        <!-- <input type="text" name="dream-job" required> -->
+        <!-- <input type="file" name="resume" required> -->
+        <!-- <input type="submit" value="Suggest Courses"> -->
+      </form>
+    </div>
+  </div> 
+  
+  <!-- Counter -->
+  <div id="counter">
+      <h2>Success Stories</h2>
+      <p>We've helped <span id="success-count">X</span> people find their dream jobs!</p>
+  </div>
+    
+  <!-- Footer -->
+  <footer id="footer">
+    <p>Copyright 2023 4Sight-by Ewan Abdo</p>
+  </footer>
+  
+  
+  
